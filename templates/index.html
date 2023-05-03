@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+img {
+  max-width: 100%;
+  height: auto;
+  }
+  @media only screen and (max-width: 600px) {
+	img {
+	max-width: 80%;
+	}
+  }
+</style>
+
+<div class="container-fluid" id="home_screen" style="padding-left: 20px; padding-top: 10px; font-size:18px; text-align:justify">
+    <img width=360 height=245 src="../static/images/side.png" align=right hspace=12><span lang=EN-GB>
+<p class="breadcrumb" style="padding:0 0px;"> You are here:&nbsp;<b>Home</b></p>
+    <h3>{% block title %} Welcome to BufAMPpred  {% endblock %}</h3>
+
+<p>
+Antimicrobial peptides (AMPs) popularly known as host-defence peptides are products of innate immunity in response to invading microbes. They are reported to follow various mechanisms like cell membrane damage, inhibition of protein synthesis, protein folding and enzymatic activities, adaptive immune response signaling, DNA interference to destroy their targets. The increase in the AMP resistance in human beings and livestock animals has gained serious attention due to ineffectiveness over pathogens targeted to eliminate. Looking into the potentials of these molecules, it can be used as pharmaceutical agents but there lie constraints such as toxicity to human cells, lack of stability and cost. Optimization and engineering of peptides can take care of toxicity and stability issues but higher production cost makes screening of large numbers of peptides very expensive. Computational approaches for AMP prediction may be one of the ways to overcome the cost constraint.
+</p>
+
+<p>
+We present BufAMPpred, a web server designed to predict if a peptide sequence has antimicrobial properties or not.
+We developed a Convolutional Neural Network (CNN) along with Long Short Term Memory (LSTM) based classification predictor.
+The datasets used to model are the data collected from dbAMP, DRAMP, DBAASP and APD3.
+
+We perform the computation on a Linux based HPC cluster environment using 100 cluster cores of Intel Xeon Gold 6148 CPU with 2.40 GHz clock speed for each training instance. 
+For implementation, Keras (Chollet Francois, 2015) a high-level API for deep learning based on TensorFlow (Abadi <i>et al.</i>, 2016) was used.
+
+BufAMPpred is a user-friendly AMP prediction server where the user inputs the sequence in fasta format.
+The multiple sequences can be uploaded but not exceeding 500. 
+The prediction accuracy of the server is 98.72 percent  and AUC as 99.14 was achieved for the combined ensemble model which was implemented in the server. Mobile app also developed for the same and available in URL <a href=http://webtom.cabgrid.res.in/codes/bufdeepamp/> mobile app </a>
+    </span></p>
+
+</p>
+
+    </span></p>
+</div>
+
+{% endblock %}

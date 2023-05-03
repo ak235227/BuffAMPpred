@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div  class="container-fluid" id="home_screen" style="padding-left: 20px; padding-top: 10px; font-size:18px; text-align:justify">
+  <p class="breadcrumb" style="padding:0 0px;"> You are here:&nbsp;<b>Tutorial</b></p>
+</div>
+<div align=center>
+    <td align="center">
+        <h5>Download the manual for the tutorial by clicking on the download link below.</h5>
+
+        <a href="{{url_for('Tutorial_manual')}}"> download manual </a>
+    </td>
+<table>
+<tbody><tr><td>
+<strong></strong><center><strong>BuffDeepAMP: Deep Learning based AMP Prediction Server for Buffalo</strong><center><strong></strong>
+</center></center></td></tr>
+<tr><td>
+BuffDeepAMP: Deep Learning based AMP Prediction Server for Buffalo is the web server designed to predict if a peptide sequence has antimicrobial properties or not. The webserver is developed based on a Recurrent Neural Network known as Bi-directional GRU for the classification of AMPs of buffalo specific.
+</td></tr>
+<tr><td>
+The BuffDeepAMP contains five tabs viz. Home, Analysis, Tutorial, Team and BuffAMPdb.
+</td></tr>
+<tr><td>
+<strong>Home -&gt;</strong> This tab provides the brief information of BuffDeepAMP server.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Home.png" alt="Home" height="319" width="641">
+</td></tr>
+<tr><td>
+<strong>Analysis -&gt;</strong> This tab provides the facility to analyse the uploaded fasta file (Amino acid sequence / Peptides sequence)
+    and give the result in a tabular form.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis1.png" alt="Analysis1" height="319" width="641">
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis3.png" alt="Analysis3" height="319" width="641">
+</td></tr>
+<tr><td>
+Input fasta file (peptide sequence or amino acid sequence) can directly be imported to web server via uploading the file (fasta file).
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis2.png" alt="Analysis2" height="319" width="641">
+</td></tr>
+<tr><td>
+User can also see the fasta format by clicking on the ‘sample file’ link and the sample file will be downloaded.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis5.png" alt="Analysis5" height="319" width="641">
+</td></tr>
+<tr><td>
+Click on the "Analyse your data" button after uploading fasta file on the web page by choosing fasta file from your system, it will open a page where the result will show in
+    a tabular form along with prediction of the AMP Present or Absent.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Result.png" alt="Result" height="319" width="641">
+</td></tr>
+</tbody></table>
+<p><b>NOTE:</b> The prediction of the Amino acid sequences or Peptide sequence is done only by taking the 60 length fragment of the input sequence.
+    The sequences greater than 60 in length will be cut down in 60 length fragments by sliding one length at a time and will make fragments of the large file.</p>
+{% endblock %}
+{% endblock %}
+</div>

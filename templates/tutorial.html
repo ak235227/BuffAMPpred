@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Tutorial-->
+<div class="container-fluid" id="home_screen" style="background-color:#F7E7CE; padding-left: 20px; padding-top: 20px; padding-bottom: 20px; font-size:18px; text-align:justify">
+    <p class="breadcrumb" style="padding:0 0px;"> You are here:&nbsp;<b>Tutorial</b></p>
+    <table>
+<tbody><tr><td>
+<strong></strong><center><strong>BufAMPpred: Deep Learning based AMP Prediction Server for Buffalo</strong><center><strong></strong>
+</center></center></td></tr>
+<tr><td>
+BufAMPpred: Deep Learning based AMP Prediction Server for Buffalo is the web server designed to predict if a peptide sequence has antimicrobial properties or not.
+    The webserver is developed based on a Convolutional Neural Network (CNN) along with
+    Long Short Term Memory (LSTM) based classification predictor for the classification of AMPs.<br>
+</td></tr>
+<tr><td>
+<br>The BufAMPpred contains five tabs viz. Home, Analysis, Tutorial, Team and BufAMPpred.<br>
+</td></tr>
+<tr><td>
+<br><strong>Home -&gt;</strong> This tab provides the brief information of BufAMPpred server.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Home.png" alt="Home" height="425" width="750">
+</td></tr>
+<tr><td>
+<br><strong>Analysis -&gt;</strong> This tab provides the facility to analyse the uploaded fasta file (Amino acid sequence / Peptides sequence)
+    and give the result in a tabular form.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis1_1.png" alt="Analysis1_1" height="425" width="750">
+</td></tr>
+<tr><td>
+    <br>
+    Input fasta file (Peptides sequence/Amino acid sequence) can directly be imported to the web server in two modes: <br>
+<b>a.</b> Direct from the input insertion box on the web page<br>
+<b>b.</b> Via uploading the file (fasta file)
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis1_2.png" alt="Analysis1_2" height="425" width="750">
+</td></tr><br>
+<tr><td>
+    <br>User can also see the fasta format by clicking on the <b>Use Sample Sequence</b> button and it will automatically fill the input insertion box on the web page.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Analysis1_3.png" alt="Analysis1_3" height="425" width="750">
+</td></tr>
+<tr><td>
+    <br><strong>Result -&gt;</strong>
+    click on the <b>Submit</b> button after inserting fasta file in the input insertion box on the web page or click on the <b>Upload File</b>
+    button after choosing fasta file from your system, it will show the result of the given fasta file in a tabular form
+    along with prediction class of the AMP or nonAMP sequence.
+    The Result can be easily downloaded in csv format by clicking on the <b>Download</b> button.
+</td></tr>
+<tr><td align="center">
+<img src="../static/Result.png" alt="Result" height="425" width="750">
+</td></tr>
+<tr><td>
+    <br><strong>BufAMPdb -&gt;</strong>
+    This tab redirects the users to the link of <i>BufAMPdb</i> which provides collection of all candidate AMPs (61711) and non-AMPs (2529971) predicted for buffalo along with their corresponding gene information by using the <i>BufAMPpred</i>.
+</td></tr>
+</tbody></table>
+<br><p><b>NOTE:</b> The prediction of the Amino acid sequences or Peptide sequence is done only by taking the 60 length fragment of the input sequence.
+    The sequences greater than 60 in length will be cut down in 60 length fragments by sliding one length at a time and will make fragments of the large file.</p>
+{% endblock %}

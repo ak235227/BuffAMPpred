@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script type="text/javascript">
+	function paste_example(){
+		document.file0.sequence.value = '>sample\nKSLEECLEKHLPLPDLQEVKRVLYGKELRKLDLPREAFE';
+	}
+</script>
+<div  class="container-fluid" id="home_screen" style="padding-left: 20px; padding-top: 10px; font-size:18px; text-align:justify">
+  <p class="breadcrumb" style="padding:0 0px;"> You are here:&nbsp;<b>Analysis</b></p>
+</div>
+
+<form id="file0" name = "file0" action = "/uploader1" method = "POST"  enctype = "multipart/form-data">
+	<div align="center">
+		<font align="center" class="style5">
+			<b>Paste Amino acid sequence for AMP prediction in fasta format</b>
+		</font>
+		<br>
+		<br>
+		<textarea name="sequence" cols="70" rows="6"></textarea>
+		<br>
+
+	<div align="center">
+		<input value="Submit" size="20" type="submit" class="btn btn-primary btn-sm">
+		<input value="Use Sample Sequence" onclick="paste_example();" type="button" class="btn btn-info btn-sm">
+	</div>
+		<br>
+		<font align="center" class="style5">
+			<b>OR</b>
+		</font> <br>
+		<font align="center" class="style5">
+			<b>
+				Upload Amino Acid Sequence/Peptide Sequence file in fasta format
+				<br>
+			</b>
+		</font> 
+
+	</div>		
+
+
+
+</form>
+<br>
+<font align="center" class="style5">
+<form id="file1" name = "file1" action="/uploader1" method="post" enctype="multipart/form-data">
+  Select fasta file to upload:
+  <input type="file" name="seqfile" id="seqfile" class="btn-sm">
+  <br>
+	<br>
+  <input type="submit" value="Upload File" name="submit" class="btn btn-primary btn-sm">
+</form>
+<br>
+<br>
+{% endblock %}

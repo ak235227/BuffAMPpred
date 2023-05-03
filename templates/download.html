@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Download {% endblock %}</h1>
+
+
+<form id="file1" name = "file1" action = "http://webtom.cabgrid.res.in:5000/download" method = "POST">
+
+<input type="text" id="nofeatures" name="nofeatures"><br><br>
+
+<input value="Submit" size="20" type="submit">
+
+
+{% for i in list1 %}
+    <p>
+       <input type = ext name= {{i}}
+    </p>
+
+{% endfor %}
+
+
+</form>
+
+
+
+{% endblock %}
